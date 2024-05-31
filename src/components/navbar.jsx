@@ -4,7 +4,7 @@ import Image from "next/image"
 function Navbar() {
   return (
     <nav>
-        <Link className="" href="/">
+        <Link className="logo" href="/">
             <Image
                 src="/images/LogoPerfilJob.png"
                 alt="Logo"

@@ -1,15 +1,16 @@
 import Link from "next/link"
 import Image from "next/image"
+import "./navbar.scss"
 
 function Navbar() {
   return (
-    <nav>
+    <nav className="navbar">
         <Link className="logo" href="/">
             <Image
-                src="/images/LogoPerfilJob.png"
+                src="/images/logo.png"
                 alt="Logo"
-                width={100}
-                height={100}
+                width={200}
+                height={80}
             />
         </Link>
         <ul>    

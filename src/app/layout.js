@@ -1,7 +1,7 @@
 import { Roboto } from "next/font/google";
 import "./globals.scss";
 import Navbar from "@/components/navbar";
-import variables from "./variables.module.scss"
+import Footer from "@/components/footer";
 import "./layout.scss";
 
 const roboto = Roboto({
@@ -25,6 +25,7 @@ export default function RootLayout({ children }) {
           {children}
           </div>
         </main>
+        <Footer/>
       </body>
     </html>
   );

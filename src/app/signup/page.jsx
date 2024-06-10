@@ -5,8 +5,11 @@ function signUp() {
     <div className="container-signup">
         <form className="form" id="signupForm">
             <h2>Signup</h2>
-            <label for="name">Nombre</label>
+            <label for="name">Nombre(s)</label>
             <input type="text" id="name" name="name" required/>
+
+            <label for="name">Apellidos</label>
+            <input type="text" id="lastname" name="lastname" required/>
             
             <label for="username">Usuario</label>
             <input type="text" id="username" name="username" required/>

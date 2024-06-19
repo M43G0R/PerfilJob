@@ -1,11 +1,18 @@
 "use client"
 import { useForm } from "react-hook-form"
 import { useRouter } from "next/navigation"
+import Select from "react-select"
+import { useState } from "react"
 
 import "./SignUp.scss"
 
 function SignUp() {
 
+  const [select, setSelect] = useState("")
+  const options = [
+    { value: "student", label: "Estudiante" },
+    { value: "company", label: "Empresa" }
+  ]
 
   const {
     register,
@@ -17,7 +24,7 @@ function SignUp() {
 
   const onSubmit = handleSubmit(async (data) => {
 
-    console.log(data)
+    console.log("Type User: " + data.typeuser)
 
     if (data.password == !data.confirmPassword) {
       return alert("Passwords do not match")
@@ -31,7 +38,7 @@ function SignUp() {
         username: data.username,
         email: data.email,
         password: data.password,
-        typeuser: data.typeuser
+        typeuser: select
       }),
       headers: {
         "Content-Type": "application/json",
@@ -95,10 +102,14 @@ function SignUp() {
         )}
 
         <label for="typeuser">Tipo de usuario</label>
-        <select id="typeuser" name="typeuser">
-          <option value="student">Estudiante</option>
-          <option value="company">Empresa</option>
-        </select>
+        <Select
+          required
+          options={options}
+          onChange={(selectOption) => {
+            setSelect(selectOption.value)
+            console.log(select)
+          }}
+        />
 
         <label for="password">Contraseña</label>
         <input type="password" id="password" name="password" placeholder="contra123" {...register("password", {

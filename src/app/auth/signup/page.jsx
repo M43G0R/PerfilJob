@@ -45,7 +45,7 @@ function SignUp() {
       },
     });
 
-    console.log(res.json())
+
 
     if (res.ok) {
       router.push("/auth/login")

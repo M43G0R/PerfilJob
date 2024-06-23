@@ -6,7 +6,7 @@ import { useState } from "react"
 import "./Login.scss"
 
 
-function login() {
+function Login() {
 
   const router = useRouter()
 
@@ -74,4 +74,4 @@ function login() {
   );
 }
 
-export default login;
+export default Login;

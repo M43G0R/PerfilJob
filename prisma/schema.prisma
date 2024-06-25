@@ -20,4 +20,65 @@ model User {
   typeuser String 
   email String @unique
   createdAt DateTime @default(now())
+  
+  studentProfile StudentProfile?
+  companyProfile CompanyProfile?
+}
+
+model StudentProfile {
+  id Int @id @default(autoincrement())
+  imageProfile String
+  about String
+  university String
+  career String
+  location String
+  work String
+  experience String
+  knowledge String
+
+  student User @relation(fields: [studentExtraId], references: [id])
+  studentExtraId Int @unique
+
+  postulation Postulation[] 
+}
+
+model CompanyProfile {
+  id Int @id @default(autoincrement())
+  imageProfile String
+  about String
+  location String
+  name String
+
+  company User @relation(fields: [companyProfile], references: [id])
+  companyProfile Int @unique
+  
+  job Job[]
+
+}
+
+model Job{
+  id Int @id @default(autoincrement())
+  position String
+  skill String
+  location String
+  duration String
+  about String
+  requirements String
+  createdAt DateTime @default(now())
+
+  job CompanyProfile @relation(fields: [jobId], references: [id])
+  jobId Int @unique
+
+  postulation Postulation @relation(fields: [postularionId], references: [id])
+  postularionId Int  @unique
+}
+
+model Postulation {
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  student StudentProfile @relation(fields: [studentId], references: [id])
+  studentId Int @unique
+
+  job Job?
 }

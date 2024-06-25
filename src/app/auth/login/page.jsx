@@ -19,20 +19,23 @@ function Login() {
   } = useForm();
 
   const onSubmit = handleSubmit(async (data) => {
-    console.log(data);
+    //console.log("this is data: ", data);
 
     const res = await signIn("credentials", {
       email: data.email,
       password: data.password,
       redirect: false,
     });
-    console.log(res);
+    //console.log("this is res ", res);
 
     if (res.error) {
       setError(res.error);
-      console.log("Hay un error aqui");
+      //console.log("Hay un error aqui");
     } else {
-      router.push("/dashboard");
+
+      const idProfile = null
+
+      router.push(`/user/profile`);
       router.refresh()
     }
   });

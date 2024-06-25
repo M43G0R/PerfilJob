@@ -24,7 +24,7 @@ function SignUp() {
 
   const onSubmit = handleSubmit(async (data) => {
 
-    console.log("Type User: " + data.typeuser)
+    //console.log("Type User: " + data.typeuser)
 
     if (data.password == !data.confirmPassword) {
       return alert("Passwords do not match")

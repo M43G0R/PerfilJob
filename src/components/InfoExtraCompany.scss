@@ -1,0 +1,45 @@
+.infoExtra{
+    background: #f5f5f5;
+    width: 600px;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: none;
+    
+    form{
+        gap: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        flex-flow: column wrap;
+        
+        label{
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 10px;
+            font-style: italic;
+        }
+
+        button{
+            border-radius: 30px;
+            width: auto;
+            height: 50px;
+            background: rgb(31, 147, 241);
+            border: none;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 10px;
+            &:hover{
+                background: rgb(14, 124, 214);
+            }
+        }
+
+
+        
+    }
+}

@@ -36,7 +36,7 @@ export async function POST(request) {
       })
     }
 
-    console.log(data)
+    //console.log(data)
 
     data.password = await bcrypt.hash(data.password, 10)
 

@@ -6,7 +6,7 @@ import "./navbar.scss";
 
 async function Navbar() {
   const session = await getServerSession(authOptions);
-  console.log(session);
+  //console.log("This is session", session);
 
   return (
     <nav className="navbar">
@@ -26,10 +26,10 @@ async function Navbar() {
         ) : (
           <>
             <li>
-                <Link href="/dashboard">Dashboard</Link>
+                <Link href="/feed">Feed</Link>
             </li>
             <li>
-                <Link href="/api/auth/signout">Logout</Link>
+                <Link href="/api/auth/signout">Log Out</Link>
             </li>
           </>
         )}
